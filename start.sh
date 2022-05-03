@@ -65,7 +65,7 @@ else
 fi
 
 cd $HOME
-wget $url
+wget $url -N
 filename=${url##*/}
 ziplog=$(unzip -o -d /usr/local/bin $filename | grep '/usr/local/bin/')
 binary=${ziplog##*/}
