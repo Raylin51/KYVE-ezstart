@@ -21,26 +21,26 @@ function checkPath() {
 
 until [[ $? -eq 0 ]] && [[ -n "$pool" ]]
 do
-  read -p 'Pool ID: ' pool
+  read -p 'Pool ID: ' pool < /dev/tty
   checkInt $pool echo "Pool ID"
 done
 until [ $? -eq 0 ] && [[ -n "$mnemonic" ]]
 do
-  read -p 'Mnemonic: ' mnemonic
+  read -p 'Mnemonic: ' mnemonic < /dev/tty
   checkMenmonic $mnemonic
 done
 until [ $? -eq 0 ] && [[ -n "$initialStake" ]]
 do
-  read -p 'InitialStake: ' initialStake
+  read -p 'InitialStake: ' initialStake < /dev/tty
   checkInt $initialStake echo "Initial stake"
 done
 
-read -p 'Ar wallet json(If you saved json file on this device, just press Enter): ' arjson
+read -p 'Ar wallet json(If you saved json file on this device, just press Enter): ' arjson < /dev/tty
 if [ -z "$arjson" ]
 then
   until [[ $? -eq 0 ]] && [[ -n "$arpath" ]]
   do
-    read -e -p 'Ar wallet path: ' arpath
+    read -e -p 'Ar wallet path: ' arpath < /dev/tty
     checkPath $arpath
   done
 else
