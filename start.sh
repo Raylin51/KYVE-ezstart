@@ -65,9 +65,8 @@ else
 fi
 
 cd $HOME
-wget $url -N
-filename=${url##*/}
-ziplog=$(unzip -o -d /usr/local/bin $filename | grep '/usr/local/bin/')
+wget $url -O KYVE.zip
+ziplog=$(unzip -o -d /usr/local/bin KYVE.zip | grep '/usr/local/bin/')
 filearr=(${ziplog//inflating:/})
 binary=${filearr##*/}
 chmod a+rx /usr/local/bin/$binary
