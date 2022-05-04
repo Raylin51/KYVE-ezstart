@@ -21,26 +21,26 @@ function checkPath() {
 
 until [[ $? -eq 0 ]] && [[ -n "$pool" ]]
 do
-  read -p 'Pool ID: ' pool < /dev/tty
+  read -p 'Pool ID: ' pool
   checkInt $pool echo "Pool ID"
 done
 until [ $? -eq 0 ] && [[ -n "$mnemonic" ]]
 do
-  read -p 'Mnemonic: ' mnemonic < /dev/tty
+  read -p 'Mnemonic: ' mnemonic
   checkMenmonic $mnemonic
 done
 until [ $? -eq 0 ] && [[ -n "$initialStake" ]]
 do
-  read -p 'InitialStake: ' initialStake < /dev/tty
+  read -p 'InitialStake: ' initialStake
   checkInt $initialStake echo "Initial stake"
 done
 
-read -p 'Ar wallet json(If you saved json file on this device, just press Enter): ' arjson < /dev/tty
+read -p 'Ar wallet json(If you saved json file on this device, just press Enter): ' arjson
 if [ -z "$arjson" ]
 then
   until [[ $? -eq 0 ]] && [[ -n "$arpath" ]]
   do
-    read -e -p 'Ar wallet path: ' arpath < /dev/tty
+    read -e -p 'Ar wallet path: ' arpath
     checkPath $arpath
   done
 else
@@ -65,10 +65,11 @@ else
 fi
 
 cd $HOME
-wget $url -N
+wget $url
 filename=${url##*/}
 ziplog=$(unzip -o -d /usr/local/bin $filename | grep '/usr/local/bin/')
-binary=${ziplog##*/}
+filearr=(${ziplog//inflating:/})
+binary=${filearr##*/}
 chmod a+rx /usr/local/bin/$binary
 
 sudo tee <<EOF >/dev/null /etc/systemd/system/kyve.service
