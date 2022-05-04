@@ -91,4 +91,4 @@ systemctl enable kyve
 systemctl daemon-reload
 systemctl start kyve
 
-echo "Service started. Run "systemctl status kyve" command to check status. Go to https://app.kyve.network to check your validator."
+echo "Service started. Run \"systemctl status kyve\" command to check status. Go to https://app.kyve.network to check your validator."
