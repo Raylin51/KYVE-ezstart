@@ -78,7 +78,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$binary --poolId $pool --mnemonic $mnemonic --initialStake $initialStake --keyfile $arpath --network korellia
+ExecStart=$binary --poolId $pool --mnemonic "$mnemonic" --initialStake $initialStake --keyfile $arpath --network korellia
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
