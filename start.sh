@@ -4,6 +4,7 @@ evm='https://github.com/KYVENetwork/evm/releases/download/v1.0.3/evm-linux.zip'
 bitcion='https://github.com/kyve-org/bitcoin/releases/download/v0.0.0/kyve-bitcoin-linux.zip'
 solana='https://github.com/kyve-org/solana/releases/download/v0.0.0/kyve-solana-linux.zip'
 zilliqa='https://github.com/kyve-org/zilliqa/releases/download/v0.0.0/kyve-zilliqa-linux.zip'
+near='https://github.com/kyve-org/near/releases/download/v0.0.0/kyve-near-linux.zip'
 
 function checkInt() {
   expr $1 + 0&>/dev/null
@@ -60,6 +61,9 @@ then
 elif [ $pool -eq 5 ]
 then
   url=$zilliqa
+elif [ $pool -eq 6 ]
+then
+  url=$near
 else
   url=$evm
 fi
