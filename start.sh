@@ -5,6 +5,7 @@ bitcion='https://github.com/kyve-org/bitcoin/releases/download/v0.0.0/kyve-bitco
 solana='https://github.com/kyve-org/solana/releases/download/v0.0.0/kyve-solana-linux.zip'
 zilliqa='https://github.com/kyve-org/zilliqa/releases/download/v0.0.0/kyve-zilliqa-linux.zip'
 near='https://github.com/kyve-org/near/releases/download/v0.0.0/kyve-near-linux.zip'
+celo='https://github.com/kyve-org/celo/releases/download/v0.0.0/kyve-celo-linux.zip'
 
 function checkInt() {
   expr $1 + 0&>/dev/null
@@ -49,25 +50,30 @@ else
   arpath="$HOME/ar.json"
 fi
 
-if [ $pool -eq 0 -o $pool -eq 1 ]
-then
-  url=$evm
-elif [ $pool -eq 3 ]
-then
-  url=$bitcoin
-elif [ $pool -eq 4 ]
-then
-  url=$solana
-elif [ $pool -eq 5 ]
-then
-  url=$zilliqa
-elif [ $pool -eq 6 ]
-then
-  url=$near
-else
-  url=$evm
-fi
-
+case $pool in
+  [1-2])
+    url=$evm
+    ;;
+  3)
+    url=$bitcoin
+    ;;
+  4)
+    url=$solana
+    ;;
+  5)
+    url=$zilliqa
+    ;;
+  6)
+    url=$near
+    ;;
+  7)
+    url=$celo
+    ;;
+  *)
+    url=$evm
+    ;;
+esac
+  
 cd $HOME
 wget $url -O KYVE.zip
 ziplog=$(unzip -o -d /usr/local/bin KYVE.zip | grep '/usr/local/bin/')
