@@ -7,6 +7,7 @@ zilliqa='https://github.com/kyve-org/zilliqa/releases/download/v0.0.0/kyve-zilli
 near='https://github.com/kyve-org/near/releases/download/v0.0.0/kyve-near-linux.zip'
 celo='https://github.com/kyve-org/celo/releases/download/v0.0.0/kyve-celo-linux.zip'
 evmos='https://github.com/kyve-org/evm/releases/download/v1.0.5/kyve-evm-linux.zip'
+cosmos='https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-cosmos-linux.zip'
 
 function checkInt() {
   expr $1 + 0&>/dev/null
@@ -72,6 +73,9 @@ case $pool in
     ;;
   8)
     url=$evmos
+    ;;
+  9)
+    url=$cosmos
     ;;
   *)
     url=$evm
