@@ -10,6 +10,7 @@ evmos='https://github.com/kyve-org/evm/releases/download/v1.0.5/kyve-evm-linux.z
 cosmos='https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-cosmos-linux.zip'
 injective='https://github.com/kyve-org/injective/releases/download/v0.0.0/kyve-injective-linux.zip'
 evmos_cosmos='https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-cosmos-linux.zip'
+axelar='https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-cosmos-linux.zip'
 
 function checkInt() {
   expr $1 + 0&>/dev/null
@@ -84,6 +85,9 @@ case $pool in
     ;;
   11)
     url=$evmos_cosmos
+    ;;
+  12)
+    url=$axelar
     ;;
   *)
     url=$evm
