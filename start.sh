@@ -8,7 +8,7 @@ near='https://github.com/kyve-org/near/releases/download/v0.0.0/kyve-near-linux.
 celo='https://github.com/kyve-org/celo/releases/download/v0.0.0/kyve-celo-linux.zip'
 evmos='https://github.com/kyve-org/evm/releases/download/v1.0.5/kyve-evm-linux.zip'
 cosmos='https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-cosmos-linux.zip'
-injective='https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-cosmos-linux.zip'
+injective='https://github.com/kyve-org/injective/releases/download/v0.0.0/kyve-injective-linux.zip'
 evmos_cosmos='https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-cosmos-linux.zip'
 
 function checkInt() {
