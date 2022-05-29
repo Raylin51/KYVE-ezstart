@@ -13,6 +13,7 @@ evmos_cosmos='https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-c
 axelar='https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-cosmos-linux.zip'
 aurora='https://github.com/KYVENetwork/evm/releases/download/v1.0.3/evm-linux.zip'
 cronos='https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-cosmos-linux.zip'
+terra='https://github.com/kyve-org/cosmos/releases/download/v0.0.0/kyve-cosmos-linux.zip'
 
 function checkInt() {
   expr $1 + 0&>/dev/null
@@ -96,6 +97,9 @@ case $pool in
     ;;
   14)
     url=$cronos
+    ;;
+  15)
+    url=$terra
     ;;
   *)
     url=$evm
